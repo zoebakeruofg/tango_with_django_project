@@ -6,8 +6,13 @@
     </head>
 
     <body>
-        <h1>Rango says...hello world!</h1>
+        <h1>Rango says...</h1>
+        <div>
+            hey there partner! <br/>
+            <strong>{{ boldmessage }}</strong>
+        </div>
 
+        <div>
         {% if categories %}
             <ul>
                 {% for category in categories %}
@@ -17,7 +22,12 @@
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
-
-        <a href="/rango/about/">About</a>
+        </div>
+        <div>
+        <a href="/rango/about/">About Rango</a><br/>
+        <img src="{% static "images/rango.jpg" %}"
+            alt="Picture of Rango" />
+        </div>
+        
     </body>
 </html>
