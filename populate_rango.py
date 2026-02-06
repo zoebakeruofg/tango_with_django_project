@@ -9,36 +9,49 @@ def populate():
     python_pages = [
         {
             "title":"Official Python Tutorial",
-            "url":'http://docs.python.org/3/tutorial/'
+            "url":'http://docs.python.org/3/tutorial/',
+            "likes":33
         },
         {
             'title':'How to Think like a Computer Scientist',
-            'url':'http://www.greenteapress.com/thinkpython/'
+            'url':'http://www.greenteapress.com/thinkpython/',
+            "likes":16
         },
         {
             'title':'Learn Python in 10 Minutes',
-            'url':'http://www.korokithakis.net/tutorials/python/'
+            'url':'http://www.korokithakis.net/tutorials/python/',
+            "likes":13
         }
     ]
     django_pages = [
         {
             'title':'Official Django Tutorial',
-            'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/'
+            'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
+            "likes":37
         },
         {
             'title':'Django Rocks',
-            'url':'http://www.djangorocks.com/'
+            'url':'http://www.djangorocks.com/',
+            "likes":12
         },
         {
             'title':'How to Tango with Django',
-            'url':'http://www.tangowithdjango.com/'
+            'url':'http://www.tangowithdjango.com/',
+            "likes":40
         }
     ]
     other_pages = [
-                    {'title':'Bottle',
-                        'url':'http://bottlepy.org/docs/dev/'},
-                    {'title':'Flask',
-                        'url':'http://flask.pocoo.org'} ]
+                    {
+                        'title':'Bottle',
+                        'url':'http://bottlepy.org/docs/dev/',
+                        "likes":32
+                    },
+                    {
+                        'title':'Flask',
+                        'url':'http://flask.pocoo.org',
+                        "likes":50
+                    }
+                ]
 
     cats = {'Python': {'pages': python_pages, "views":128, "likes":64},
             'Django': {'pages': django_pages, "views":64, "likes":32},
@@ -53,7 +66,7 @@ def populate():
         for p in Page.objects.filter(category=c):
             print(f"- {c}: {p}")
     
-def add_page(cat, title, url, views = 0):
+def add_page(cat, title, url, views = 1):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
     p.url = url
     p.views = views
