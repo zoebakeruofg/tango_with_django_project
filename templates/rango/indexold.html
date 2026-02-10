@@ -1,11 +1,10 @@
-{% extends 'rango/base.html' %}
-{% load staticfiles%}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
 
-{% block title_block %}
-    Homepage
-{% endblock %}
-
-{% block body_block %}
     <body>
         <h1>Rango says...</h1>
         <div>
@@ -44,8 +43,12 @@
             <strong>There are no pages present.</strong>
         {% endif %}
         </div>
-    <div>
+
+        <div>
+        <a href="/rango/add_category/">Add a New Category</a><br />
         <img src="{% static "images/rango.jpg" %}"
             alt="Picture of Rango" />
-    </div>
-{% endblock %}
+        </div>
+        
+    </body>
+</html>
