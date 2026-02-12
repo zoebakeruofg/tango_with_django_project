@@ -9,6 +9,7 @@
         <div>
             here is the about page. <br />
             <strong>{{ boldmessage }}</strong><br />
+            <strong><marquee width = "50%" scrollamount = "20">Visits: {{ visits }}</marquee></strong>
         </div>
         <div>
             <a href="/rango/about/">About</a><br />
@@ -17,29 +18,3 @@
             <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat" />
         </div>
 {% endblock %}
-
-
-
-
-<!--
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Rango</title>
-    </head>
-
-    <body>
-        <h1>Rango says...</h1>
-        <div>
-            here is the about page. <br />
-            <strong>{{ boldmessage }}</strong><br />
-        </div>
-        <div>
-            <a href="/rango/about/">About</a><br />
-            <a href="/rango/">Index</a><br />
-            <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
-            <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat" />
-        </div>
-    </body>
-</html>
